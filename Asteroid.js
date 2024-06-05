@@ -617,16 +617,6 @@ function getDomainName() {
 }
 
 
-function MalwareKiller() {
-    let list = app.ReadFile('malwarelist.txt');
-
-    let listArray = list.split('\n');
-    if (listArray.includes(getDomainName())) {
-        web.LoadUrl('webSafety.html')
-    }
-
-}
-
 var processedFiles = [];
 
 let currentDomain = '';
@@ -649,77 +639,6 @@ function webOnRequest(url, method, isMain, isAsync) {
 
 }
 
-/*
-function isDownloadable(url) {
-    try {
-        var downloadExtensions = [
-            '7z', 'aac', 'apk', 'avi', 'bmp', 'css', 'csv', 'doc', 'docx', 'flac', 'flv', 'gif', 'gz', 'gzip',
-            'ics', 'iso', 'jar', 'jpeg', 'jpg', 'js', 'json', 'm4a', 'm4v', 'mid', 'mov', 'mp3', 'mp4', 'mpeg', 'mpg',
-            'odp', 'ods', 'odt', 'ogg', 'ogv', 'pdf', 'png', 'ppt', 'pptx', 'rar', 'rtf', 'sh', 'svg', 'swf', 'tar',
-            'tif', 'tiff', 'ts', 'wav', 'webm', 'webp', 'woff', 'woff2', 'xls', 'xlsx', 'xml', 'xul', 'zip'
-        ];
-
-        const downloadableHostnames = [
-
-        ];
-
-        const urlObject = new URL(url);
-
-        // Check if the URL is from a downloadable hostname
-        if (downloadableHostnames.includes(urlObject.hostname)) {
-            return true;
-        }
-
-        // Check if the URL has a downloadable file extension
-        const urlPath = urlObject.pathname.toLowerCase();
-        if (downloadExtensions.some(ext => urlPath.endsWith('.' + ext))) {
-            return true;
-        }
-
-        // Check if the URL has a query parameter indicating a downloadable file
-        const queryParams = urlObject.searchParams;
-        if (queryParams.has('download') || queryParams.has('dl') || queryParams.has('attach')) {
-            return true;
-        }
-
-        // Check if the URL has a file extension at the end of the URL
-        const parts = urlPath.split('/');
-        const lastPart = parts[parts.length - 1];
-        if (lastPart.includes('.') && downloadExtensions.some(ext => lastPart.endsWith('.' + ext))) {
-            return true;
-        }
-
-        // Check if the URL has a file extension before the query string
-        const queryStringIndex = urlPath.indexOf('?');
-        if (queryStringIndex > 0) {
-            const filename = urlPath.substring(urlPath.lastIndexOf('/', queryStringIndex) + 1, queryStringIndex);
-            if (filename.includes('.') && downloadExtensions.some(ext => filename.endsWith('.' + ext))) {
-                return true;
-            }
-        }
-
-        // Check if the URL is downloadable based on response headers
-        const xhr = new XMLHttpRequest();
-        xhr.open('HEAD', url, false);
-        xhr.send();
-
-        if (xhr.status === 200) {
-            const contentType = xhr.getResponseHeader('content-type');
-            const contentDisposition = xhr.getResponseHeader('content-disposition');
-
-            if (contentType && contentType.includes('application') ||
-                contentDisposition && contentDisposition.includes('attachment')) {
-                return true;
-            }
-        }
-
-        return false;
-
-    } catch (e) {
-        DoNothing()
-    }
-}
-*/
 function isDownloadable(url) {
     try {
         const downloadExtensions = [
@@ -1310,7 +1229,7 @@ function webOnBack() {
 
 function webOnForward() {
     try {
-
+ 
         if (web.CanGoForward()) web.Forward();
         else toasta = app.CreatePopUp(), toasta.SetType("toast"), toasta.SetText("[fa-info-circle] No Foward History Yet", "Bottom"), toasta.SetMargins(0.05, 0.02, 0.05, 0.1), toasta.Align("bottom"), toasta.SetColor("#262628"), toasta.Duration("short"), toasta.AnimateIn(""), toasta.AnimateOut("slidetoright"), toasta.Show();
 
