@@ -69,14 +69,14 @@ function Main() {
     layHome.AddChild(AIBtn)
 
     barcodeSearch = MUI.CreateButtonOutlined('qrcode')
-    barcodeSearch.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    barcodeSearch.SetFontFile("Misc/Framework7Icons-Regular.ttf")
     barcodeSearch.SetPosition(0.74, 0.42)
     barcodeSearch.SetOnTouch(imageSearch)
     layHome.AddChild(barcodeSearch)
     
     //RANDOM FACTS 
     
-    var txt = app.ReadFile("factList.txt");
+    var txt = app.ReadFile("Misc/factList.txt");
     var lines = txt.split("\n");
     var randomIndex = Math.floor(Math.random() * lines.length);
     var fact = lines[randomIndex];
@@ -104,22 +104,22 @@ function Main() {
     bookmarks = MUI.CreateButtonElegant('bookmark', 0.19, 0.08)
     bookmarks.SetPosition(0.054, 0.83)
     //bookmarks.SetOnTouch(bookmarkViewer)
-    bookmarks.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    bookmarks.SetFontFile("Misc/Framework7Icons-Regular.ttf")
     layHome.AddChild(bookmarks)
 
     recents = MUI.CreateButtonElegant('book', 0.19, 0.08)
     recents.SetPosition(0.29, 0.83)
-    recents.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    recents.SetFontFile("Misc/Framework7Icons-Regular.ttf")
     layHome.AddChild(recents)
 
     bhistory = MUI.CreateButtonElegant('gobackward', 0.19, 0.08)
     bhistory.SetPosition(0.51, 0.83)
-    bhistory.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    bhistory.SetFontFile("Misc/Framework7Icons-Regular.ttf")
     layHome.AddChild(bhistory)
 
     collections = MUI.CreateButtonElegant('archivebox', 0.19, 0.08)
     collections.SetPosition(0.74, 0.83)
-    collections.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    collections.SetFontFile("Misc/Framework7Icons-Regular.ttf")
     layHome.AddChild(collections)
 
 
@@ -129,27 +129,27 @@ function Main() {
     back = MUI.CreateButtonFlat("chevron_left", 0.19, 0.08)
     back.SetPosition(0, 0, 0.19, 0.08)
     back.SetOnTouch(webOnBack)
-    back.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    back.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     forward = MUI.CreateButtonFlat("chevron_right", 0.19, 0.08)
     forward.SetPosition(0.2, 0, 0.19, 0.08)
     forward.SetOnTouch(webOnForward)
-    forward.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    forward.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     panel = MUI.CreateButtonFlat("slider_horizontal_3", 0.19, 0.08)
     panel.SetPosition(0.4, 0, 0.19, 0.08)
     panel.SetOnTouch(HomePanel)
-    panel.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    panel.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     tabdrawer = MUI.CreateButtonFlat("rectangle_stack", 0.19, 0.08)
     tabdrawer.SetPosition(0.6, 0, 0.19, 0.08)
-    tabdrawer.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    tabdrawer.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     home = MUI.CreateButtonFlat("house", 0.19, 0.08)
     home.SetPosition(0.8, 0, 0.19, 0.08)
     home.SetOnTouch(goToHome)
     home.SetOnLongTouch(BrowsingOptions)
-    home.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    home.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     layHome.AddChild(logo)
     layHome.AddChild(searchbx)
@@ -182,14 +182,14 @@ function imageSearch(){
     qrlay.AddChild( cam );
     
     flashBtn = MUI.CreateButtonFlat("lightbulb", 0.19, 0.08)
-    flashBtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    flashBtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
     flashBtn.SetPosition(0.4, 0.6)
     flashBtn.SetOnTouch(flashT)
     flashBtn.Show()
     qrlay.AddChild( flashBtn );
     
     flashBtnOff = MUI.CreateButtonFlat("lightbulb_slash", 0.19, 0.08)
-    flashBtnOff.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    flashBtnOff.SetFontFile("Misc/Framework7Icons-Regular.ttf")
     flashBtnOff.SetPosition(0.4, 0.6)
     flashBtnOff.SetOnTouch(flashF)
     flashBtnOff.Hide()
@@ -815,56 +815,56 @@ function HomePanel() {
         themebtn = MUI.CreateButtonFlat("sun_max_fill", 0.35)
         themebtn.SetPosition(0.1, 0, 0.2, 0.1)
         themebtn.SetOnTouch(setLightTheme)
-        themebtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+        themebtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
     } else {
         themebtn = MUI.CreateButtonFlat("moon", 0.35)
         themebtn.SetPosition(0.1, 0, 0.2, 0.1)
         themebtn.SetOnTouch(setDarkTheme)
-        themebtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+        themebtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
     }
 
     htbtn = MUI.CreateButtonFlat("goforward", 0.35)
     htbtn.SetPosition(0.3, 0, 0.2, 0.1)
     htbtn.SetOnTouch(webReload)
-    htbtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    htbtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     tlebtn = MUI.CreateButtonFlat("doc_append", 0.35)
     tlebtn.SetPosition(0.5, 0, 0.2, 0.1)
     tlebtn.SetOnTouch(GetContentLang)
-    tlebtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    tlebtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     pinbtn = MUI.CreateButtonFlat("bookmark", 0.35)
     pinbtn.SetPosition(0.7, 0, 0.2, 0.1)
-    pinbtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    pinbtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     sharebtn = MUI.CreateButtonFlat("square_arrow_up_on_square", 0.35)
     sharebtn.SetPosition(0.1, 0.11, 0.2, 0.1)
     sharebtn.SetOnTouch(ShareContent)
-    sharebtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    sharebtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     readerbtn = MUI.CreateButtonFlat("doc_plaintext", 0.35)
     readerbtn.SetPosition(0.3, 0.11, 0.2, 0.1)
     readerbtn.SetOnTouch(ReaderView)
-    readerbtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    readerbtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     findbtn = MUI.CreateButtonFlat("doc_text_search", 0.35)
     findbtn.SetPosition(0.5, 0.11, 0.2, 0.1)
     //findbtn.SetOnTouch(FindInPage)
-    findbtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    findbtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     downloadbtn = MUI.CreateButtonFlat("cloud_download", 0.35)
     downloadbtn.SetPosition(0.7, 0.11, 0.2, 0.1)
-    downloadbtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    downloadbtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     stngsbtn = MUI.CreateButtonFlat("gear_alt", 0.35)
     stngsbtn.SetPosition(0.5, 0.25, 0.2, 0.1)
     //stngsbtn.SetOnTouch(SettingsPanel)
-    stngsbtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    stngsbtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     closebtn = MUI.CreateButtonFlat("power", 0.35)
     closebtn.SetPosition(0.7, 0.25, 0.2, 0.1)
     closebtn.SetOnTouch(ExitApp)
-    closebtn.SetFontFile("Fonts/Framework7Icons-Regular.ttf")
+    closebtn.SetFontFile("Misc/Framework7Icons-Regular.ttf")
 
     panellay.AddChild(closebtn), panellay.AddChild(stngsbtn), panellay.AddChild(downloadbtn), panellay.AddChild(findbtn), panellay.AddChild(readerbtn), panellay.AddChild(sharebtn), panellay.AddChild(themebtn), panellay.AddChild(htbtn), panellay.AddChild(tlebtn), panellay.AddChild(pinbtn), panel.Show();
 }
